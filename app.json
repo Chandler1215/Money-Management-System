@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Artur's practice",
-    "slug": "arturspractice",
+    "name": "Practice",
+    "slug": "practice",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
