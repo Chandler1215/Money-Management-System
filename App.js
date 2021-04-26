@@ -9,9 +9,7 @@ import "react-native-gesture-handler";
 import store from "./store";
 
 /* Stacks */
-import { AllAppsStackNavigator } from "./src/components/AllApps";
 import { ExpenseNavigator } from "./src/expense__tracker";
-import { EmailNavigator } from "./src/gmail";
 
 import { LoadAssets, theme } from "./src/components";
 
@@ -36,17 +34,11 @@ export default function App() {
       <ThemeProvider {...{ theme }}>
         <LoadAssets {...{ assets, fonts }}>
           <SafeAreaProvider>
-            <AppStack.Navigator headerMode="none" initialRouteName="AllApps">
-              <AppStack.Screen
-                name="AllApps"
-                component={AllAppsStackNavigator}
-              />
+            <AppStack.Navigator headerMode="none" initialRouteName="ExpenseTracker">
               <AppStack.Screen
                 name="ExpenseTracker"
                 component={ExpenseNavigator}
               />
-
-              <AppStack.Screen name="Email" component={EmailNavigator} />
             </AppStack.Navigator>
           </SafeAreaProvider>
         </LoadAssets>

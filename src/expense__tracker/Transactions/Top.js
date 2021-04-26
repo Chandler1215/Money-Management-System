@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Text } from "../../components/theme";
 import { Chart } from "../Svgs";
-
+import { Platform, StyleSheet } from 'react-native';
 const Top = () => {
   const dispatch = useDispatch();
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+  var month = new Date().getMonth();
 
   const { transactions } = useSelector((state) => state.trs);
-
   const prices = transactions.map((transaction) => transaction.price);
   const balance = prices.reduce((prev, cur) => (prev += cur), 0);
   const expense =
@@ -18,10 +20,10 @@ const Top = () => {
   const income = expense + balance;
 
   return (
-    <Box paddingLeft="l" paddingRight="l" style={{ paddingTop: 40 }}>
+    <Box paddingLeft="l" paddingRight="l" style={{ paddingTop: Platform.OS === 'ios' ? "15%" : "4%" }}>
       <Box flexDirection="row" justifyContent="space-between">
         <Text variant="title" style={{ fontSize: 30, fontFamily: "RMedium" }}>
-          November
+          {monthNames[month]}
         </Text>
         <Chart />
       </Box>
@@ -43,7 +45,7 @@ const Top = () => {
             color="green"
             fontWeight="700"
           >
-            ₦{income}
+            ${income}
           </Text>
         </Box>
         <Box>
@@ -63,7 +65,7 @@ const Top = () => {
             fontWeight="700"
             fontFamily="SFBOLD"
           >
-            -₦{expense}
+            -${expense}
           </Text>
         </Box>
         <Box>
@@ -82,7 +84,7 @@ const Top = () => {
             fontSize={13}
             color="brown"
           >
-            ₦{balance}
+            ${balance}
           </Text>
         </Box>
       </Box>
