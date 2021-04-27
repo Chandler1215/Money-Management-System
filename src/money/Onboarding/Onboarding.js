@@ -14,7 +14,7 @@ const Onboarding = ({ navigation }) => {
     setTimeout(() => {
       navigation.navigate("Transactions");
     }, 9000);
-  }, []);
+  });
 
   return (
     <ImageBackground
@@ -34,25 +34,23 @@ const Onboarding = ({ navigation }) => {
       >
         <Animated.Text
           style={{
-            fontSize: moderateScale(30),
+            fontSize: moderateScale(50),
+            fontWeight: "bold",
             color: theme.colors.white,
-            fontFamily: "RBlack",
             marginBottom: theme.spacing.l,
           }}
         >
-          Expense Tracker
+          Big Money
         </Animated.Text>
 
         <Animated.Text
           style={{
-            fontSize: moderateScale(14),
+            fontSize: moderateScale(20),
             color: "white",
-            lineHeight: 25,
-            fontFamily: "RRegular",
+            lineHeight: 25
           }}
         >
-          Stay on track with your expenses so you’ll never run out of money
-          again! Start budgeting and saving so you can afford nice things.
+          Keep those big money saved.
         </Animated.Text>
       </View>
     </ImageBackground>

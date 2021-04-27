@@ -2,7 +2,7 @@ import * as React from "react";
 import { moderateScale } from "react-native-size-matters";
 import Svg, { Defs, G, Rect, Circle } from "react-native-svg";
 
-export default ({}) => {
+export default () => {
   return (
     <Svg
       width={moderateScale(94)}

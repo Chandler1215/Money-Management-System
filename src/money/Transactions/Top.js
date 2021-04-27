@@ -22,10 +22,9 @@ const Top = () => {
   return (
     <Box paddingLeft="l" paddingRight="l" style={{ paddingTop: Platform.OS === 'ios' ? "15%" : "4%" }}>
       <Box flexDirection="row" justifyContent="space-between">
-        <Text variant="title" style={{ fontSize: 30, fontFamily: "RMedium" }}>
+        <Text variant="title" style={{ fontSize: 30 }}>
           {monthNames[month]}
         </Text>
-        <Chart />
       </Box>
       <Box flexDirection="row" justifyContent="space-between" marginTop="m">
         <Box>
@@ -40,7 +39,6 @@ const Top = () => {
           <Text
             textAlign="center"
             fontFamily="SFBOLD"
-            textAlign="center"
             fontSize={13}
             color="green"
             fontWeight="700"
@@ -58,7 +56,6 @@ const Top = () => {
             Expenses
           </Text>
           <Text
-            textAlign="center"
             textAlign="center"
             fontSize={13}
             color="red"

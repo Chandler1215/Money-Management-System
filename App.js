@@ -9,22 +9,8 @@ import "react-native-gesture-handler";
 import store from "./store";
 
 /* Stacks */
-import { ExpenseNavigator } from "./src/expense__tracker";
-
+import { ExpenseNavigator } from "./src/money";
 import { LoadAssets, theme } from "./src/components";
-
-import { Bitcoin, Dash, Eth, Lite, Tether } from "./assets/images";
-
-const assets = [Bitcoin, Dash, Eth, Lite, Tether];
-
-const fonts = {
-  SFBOLD: require("./assets/fonts/SF-Pro-Text-Bold.otf"),
-  SFREGULAR: require("./assets/fonts/SF-Pro-Text-Regular.otf"),
-  SFSEMI: require("./assets/fonts/SF-Pro-Text-Semibold.otf"),
-  RBlack: require("./assets/fonts/Rubik/Rubik-Black.ttf"),
-  RRegular: require("./assets/fonts/Rubik/Rubik-Regular.ttf"),
-  RMedium: require("./assets/fonts/Rubik/Rubik-Medium.ttf"),
-};
 
 const AppStack = createStackNavigator();
 
@@ -32,11 +18,11 @@ export default function App() {
   return (
     <Provider {...{ store }}>
       <ThemeProvider {...{ theme }}>
-        <LoadAssets {...{ assets, fonts }}>
+        <LoadAssets>
           <SafeAreaProvider>
             <AppStack.Navigator headerMode="none" initialRouteName="ExpenseTracker">
               <AppStack.Screen
-                name="ExpenseTracker"
+                name="Big Money"
                 component={ExpenseNavigator}
               />
             </AppStack.Navigator>

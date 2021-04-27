@@ -9,8 +9,7 @@ const initialState = {
     { addedtime: 1587500342000, id: 6, title: "Transport", price: -10 },
     { addedtime: 1587500342000, id: 7, title: "Soup", price: -20 },
     { addedtime: 1587400342000, id: 9, title: "Funded my wallet", price: -200 },
-    { addedtime: 1587400342000, id: 10, title: "Salary", price: 2000 },
-    { addedtime: 1587400342000, id: 11, title: "Barbeque", price: -10 },
+    { addedtime: 1587400342000, id: 10, title: "Salary", price: 2000 }
   ],
 };
 

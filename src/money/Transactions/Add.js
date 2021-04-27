@@ -11,19 +11,7 @@ import { BackArrow } from "../Svgs";
 import { addTransaction } from "../../../store/actions/transactionActions";
 import { useDispatch } from "react-redux";
 
-/* Dimension */
 const { width, height } = Dimensions.get("window");
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    zIndex: 3,
-    paddingTop: 40,
-    padding: theme.spacing.l,
-    bottom: 0,
-  },
-});
 
 const Add = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -69,7 +57,7 @@ const Add = ({ navigation }) => {
         </Text>
       </Box>
 
-      <Box flexDirection="row" flexDirection="column" marginTop="xl">
+      <Box flexDirection="column" marginTop="xl">
         <Box
           justifyContent="space-between"
           flexDirection="row"
@@ -87,9 +75,7 @@ const Add = ({ navigation }) => {
             placeholder="Amount"
             keyboardType="number-pad"
             style={{
-              padding: 10,
-              fontSize: 30,
-              fontFamily: "RRegular",
+              fontSize: 25,
               width: "80%",
             }}
             onChangeText={(price) => setPrice(price)}
@@ -97,10 +83,6 @@ const Add = ({ navigation }) => {
             onSubmitEditing={() => titleRef.current.focus()}
             defaultValue={price}
           />
-
-          <Text variant="title" color="primary" style={{ fontSize: 20 }}>
-            USD
-          </Text>
         </Box>
 
         <Box marginTop="xl" borderBottomWidth={2}>
@@ -110,8 +92,7 @@ const Add = ({ navigation }) => {
             placeholder="Expenses made for"
             defaultValue={title}
             style={{
-              fontSize: 30,
-              fontFamily: "RRegular",
+              fontSize: 25,
               width: "80%",
             }}
             onChangeText={(title) => setTitle(title)}

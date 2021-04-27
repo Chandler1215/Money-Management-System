@@ -26,7 +26,7 @@ const useLoadAssets = (assets, fonts) => {
     return ready;
 };
 const LoadAssets = ({ assets, fonts, children }) => {
-    const [isNavigationReady, setIsNavigationReady] = useState(!__DEV__);
+    const [isNavigationReady, setIsNavigationReady] = useState(true);
     const [initialState, setInitialState] = useState();
     const ready = useLoadAssets(assets || [], fonts || {});
     useEffect(() => {
